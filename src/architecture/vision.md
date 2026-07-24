@@ -15,10 +15,36 @@ run a mail server, and `alice@company-a.com` can email `bob@company-b.com`
 without either company needing a business relationship. UMSP applies that
 same model to modern, rich, real-time communication.
 
+## Moderation, not deplatforming
+
+Centralizing communication in a handful of companies also concentrates an
+enormous, largely unaccountable power over people's ability to
+communicate at all: a platform's internal moderation team can suspend or
+permanently ban an account unilaterally — with no independent appeal, no
+consistent public standard, and often no real explanation — erasing
+years of someone's conversations, community, or business relationships in
+one decision. There is no equivalent of this for email: a provider can
+close your mailbox with them, but no single company can revoke your
+ability to have an email address at all.
+
+UMSP inherits email's version of this by construction. An account lives
+on one specific homeserver, and that homeserver's operator can moderate
+or suspend it according to their own policy — but that is a decision
+about *one server*, not a decision that erases someone from the entire
+network the way a platform ban does today. And where the underlying
+behavior is genuinely illegal rather than merely against a particular
+homeserver's house rules, resolving it is a matter for courts and law
+enforcement acting against an identifiable operator or account — not a
+substitute private appeals process run by a corporation with no legal
+obligation to be fair, consistent, or even responsive.
+
 ## Goals
 
 - **Federation by default.** Any individual or company can host their own
   server. Interoperability comes from a shared spec, not a shared vendor.
+- **Moderation is per-homeserver, never network-wide.** No single
+  operator can unilaterally erase someone from the whole network — see
+  [Moderation, not deplatforming](#moderation-not-deplatforming).
 - **One identity, every mode of communication.** `username@host.tld`
   works for DMs, servers/channels, feeds, and voice/video — the way an
   email address today only works for mail.
