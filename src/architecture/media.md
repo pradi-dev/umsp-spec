@@ -31,6 +31,13 @@ offline *before* any recipient homeserver has done its first fetch, the
 media becomes unavailable — a risk plain email attachments don't have,
 since email pushes the full bytes at delivery time.
 
+> **Future direction:** this section deliberately doesn't fix a cache
+> lifetime yet (see the open issue in
+> [Media Repository](../protocol/media-repository.md)). A later revision
+> could add a cache-lifetime attribute — e.g. an origin-set TTL or
+> `max-age`-style hint — without changing the pull-then-cache model
+> itself, the same way HTTP caching layers this on top of a plain GET.
+
 ## Federation with many homeservers (fan-out)
 
 The pull-then-cache model composes with channel federation

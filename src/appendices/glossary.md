@@ -3,9 +3,9 @@
 - **Aggregator** — an independent service that indexes public posts across
   homeservers to power explore/discovery feeds. See
   [Explore & Aggregators](../protocol/explore.md).
-- **Backfill** — the process by which a homeserver newly joining a channel
-  requests the existing event history from a homeserver already
-  participating. See [Channel Federation](../protocol/channel-federation.md).
+- **Backfill** — requesting a channel's prior history when newly joining
+  it. Unlike Matrix, UMSP deliberately does **not** do this — see
+  [No backfill](../protocol/channel-federation.md#no-backfill).
 - **Channel** — a text or voice/video communication space with a defined
   membership, replicated across every participating homeserver.
 - **Directory** — an independent, opt-in registry of known homeservers.

@@ -2,15 +2,14 @@
 
 ## Why event signing, not just SPF/TLS
 
-Because channel history is federated and can reach a homeserver
-indirectly — via backfill from a third homeserver, not necessarily a
-direct connection from the event's origin (see
-[Federation Model](./federation.md)) — trust cannot be based on "which IP
-just connected to me." That is exactly the limitation SPF has for email:
-SPF only validates the server on the *other end of the current
-connection*, which says nothing when content is relayed through
-intermediaries, and says nothing about whether the content itself was
-tampered with in transit.
+A live TLS connection only proves who you're talking to *right now* — it
+says nothing once an event is stored and read later, long after that
+connection is gone. Trust cannot be based on "which IP just connected to
+me," because that fact doesn't persist with the data. That is exactly the
+limitation SPF has for email: SPF only validates the server on the
+*other end of the current connection*, at the moment of delivery — it
+says nothing about whether the content itself was tampered with before or
+after that, or when it's read back out of storage much later.
 
 Email's actual answer to *content* authenticity is DKIM: a cryptographic
 signature over the message, with the public key published in DNS. UMSP
