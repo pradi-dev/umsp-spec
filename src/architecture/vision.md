@@ -3,10 +3,10 @@
 ## The problem
 
 Today, the four communication modes UMSP unifies are split across products
-that cannot talk to each other: iMessage/WhatsApp for DMs, Discord for
+that cannot talk to each other: iMessage/WhatsApp for DMs, Discord/Slack for
 communities, LINE/WeChat for rich chat, Instagram/Twitter/Facebook for
 feeds. Each is a walled garden controlled by a single company. You cannot
-run your own server, and you cannot talk to a Discord user from a WhatsApp
+run your own server, and you cannot talk to a Discord/Slack user from a WhatsApp
 account any more than you could send an email from a phone that isn't
 allowed to talk to Gmail.
 
@@ -33,6 +33,14 @@ same model to modern, rich, real-time communication.
   pattern rather than inventing a new one. Where they got it wrong (e.g.
   SMTP's lack of built-in sender verification), UMSP builds the fix in
   from day one instead of bolting it on later.
+- **Keep it simple — less is better.** Every subsystem in this spec
+  reuses existing mechanisms (signing keys, tokens, the message-send API)
+  rather than inventing a parallel one for each new feature (see
+  [Mini-Apps](./mini-apps.md) for a concrete example). When a simpler
+  design and a more powerful one are both on the table, this spec prefers
+  the simpler one, even at the cost of some flexibility — a smaller
+  surface is easier for independent implementers to get right, which
+  matters more for a federated protocol than any single feature does.
 
 ## Non-goals
 

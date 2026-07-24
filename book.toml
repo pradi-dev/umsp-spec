@@ -3,7 +3,7 @@ authors = ["pradi-dev"]
 language = "en"
 src = "src"
 title = "UMSP — Unified Messaging & Social Protocol"
-description = "Specification for a federated protocol unifying direct messaging, Discord-style servers, rich chat, and social feeds."
+description = "Specification for a federated protocol unifying direct messaging, Discord/Slack-style servers, rich chat, and social feeds."
 
 [output.html]
 git-repository-url = "https://github.com/pradi-dev/umsp-spec"

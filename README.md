@@ -1,7 +1,7 @@
 # UMSP — Unified Messaging & Social Protocol
 
 A specification for a federated protocol that unifies direct messaging,
-Discord-style servers with text/voice/video channels, LINE/WeChat-style
+Discord/Slack-style servers with text/voice/video channels, LINE/WeChat-style
 rich chat, and Twitter/Instagram/Facebook-style social feeds — hostable
 by anyone, addressed like email (`username@host.tld`).
 

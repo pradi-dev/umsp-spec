@@ -20,7 +20,7 @@ channels and feeds.
 
 ## Servers vs. feeds: two different data models
 
-A Discord-style **server** (a set of text/voice channels with a fixed
+A Discord/Slack-style **server** (a set of text/voice channels with a fixed
 membership) and a Twitter/Instagram-style **feed** (a profile timeline with
 followers) look similar on the surface but behave completely differently
 under load, and so they are modeled differently in UMSP:

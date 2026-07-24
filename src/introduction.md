@@ -5,7 +5,7 @@ communication and social interaction. It combines four things that today
 live in separate, incompatible products:
 
 - **Direct messages** — one-to-one and group conversations.
-- **Discord-style servers** — communities organized into text and
+- **Discord/Slack-style servers** — communities organized into text and
   voice/video channels.
 - **Rich chat messages** — LINE/WeChat-style messages that can carry
   attachments such as link previews, not just plain text.

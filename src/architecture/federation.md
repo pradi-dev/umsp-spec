@@ -2,7 +2,7 @@
 
 ## Channels have no single owner server
 
-In a Discord-style server with members from different homeservers, no
+In a Discord/Slack-style server with members from different homeservers, no
 single homeserver "hosts" a channel. Instead, **every homeserver that has
 at least one member in a channel keeps its own full replica** of that
 channel's message history and state — an event graph (DAG), where each
