@@ -61,6 +61,32 @@ single mandated service. The ordering itself is entirely decided
 server-side by the chosen aggregator; there is no client-side re-ranking
 step.
 
+## Private profiles and follow requests
+
+A profile can be marked private. This changes the following model in one
+place only: instead of a follow being added to the delivery list
+immediately, it starts as a **pending request** that the profile owner
+must approve or reject — the same "locked account" behavior Mastodon
+already has, and functionally the same experience as Instagram's private
+accounts.
+
+Everything downstream falls out of the existing push model for free:
+since posts are only ever delivered to homeservers on the delivery list
+([Following: push delivery](#following-push-delivery)), and a pending
+follower was never added to that list, a private account's posts are
+never pushed to non-approved followers in the first place — there is no
+separate access-control check needed at read time.
+
+Two other surfaces must respect the same flag:
+
+- A private profile's follower list **MUST NOT** be publicly queryable.
+- A private profile's posts **MUST NOT** be exposed on the optional public
+  firehose (see [Explore: aggregators](#explore-aggregators-not-a-firehose-you-run-yourself))
+  — aggregators only ever see what was already meant to be public.
+
+See [Feeds Subsystem](../protocol/feeds.md) for the request/accept/reject
+event flow.
+
 ## Directories: opt-in discovery of servers, not content
 
 Separately from aggregators (which index *content*), **directories** index

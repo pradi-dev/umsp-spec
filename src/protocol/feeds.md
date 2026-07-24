@@ -10,12 +10,38 @@ authored it. Unlike channel events, it is not replicated into a shared
 DAG — it lives on the author's homeserver and is delivered outward to
 followers' homeservers.
 
+## Following
+
+Following is a request/response exchange between homeservers, typed
+`umsp.feed.follow-request`:
+
+```json
+{
+  "type": "umsp.feed.follow-request",
+  "sender": "bob@host-b.tld",
+  "content": { "target": "alice@host-a.tld" }
+}
+```
+
+- If `alice`'s profile is **public**, `host-a.tld` **MUST** auto-accept:
+  it responds with `umsp.feed.follow-accept` and adds `host-b.tld` to
+  `alice`'s delivery list immediately.
+- If `alice`'s profile is **private**, `host-a.tld` **MUST** hold the
+  request as pending and surface it to `alice` for a manual decision. Her
+  client responds with either `umsp.feed.follow-accept` (adds
+  `host-b.tld` to the delivery list) or `umsp.feed.follow-reject` (no
+  delivery relationship is created).
+
+A homeserver **MUST NOT** expose a private profile's follower list, or its
+posts, to unauthenticated requests or to the firehose endpoint
+(see [Explore & Aggregators](./explore.md)).
+
 ## Follow delivery: shared inbox
 
 When account `A` (on `host-a.tld`) posts, `host-a.tld` **MUST** deliver
-the event to every homeserver with at least one follower of `A`, via a
-single request per destination homeserver — a **shared inbox** — rather
-than one request per follower:
+the event to every homeserver with at least one follower of `A` on its
+delivery list, via a single request per destination homeserver — a
+**shared inbox** — rather than one request per follower:
 
 ```
 POST https://<destination-homeserver>/umsp/feeds/inbox

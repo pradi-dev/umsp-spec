@@ -19,6 +19,10 @@ This endpoint is **OPTIONAL** — a homeserver that doesn't implement it is
 simply not discoverable via aggregators, exactly as valid as a website
 choosing not to be indexed by a search engine.
 
+A homeserver **MUST NOT** include posts from a private profile
+(see [Private profiles and follow requests](../architecture/feeds.md#private-profiles-and-follow-requests))
+on this endpoint, regardless of whether the request is authenticated.
+
 ## Aggregator API (client side)
 
 A client queries an aggregator of its choice — configured client-side,

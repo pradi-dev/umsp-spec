@@ -17,6 +17,9 @@
   See [Feeds Subsystem](../protocol/feeds.md).
 - **Homeserver** — a server implementing UMSP that hosts one or more
   accounts under a `host.tld`.
+- **Mini-app** — a self-hosted, interactive web app launched from within
+  a conversation, authorized via a signed ID token and a scoped access
+  token. See [Mini-Apps](../protocol/mini-apps.md).
 - **Shared inbox** — a delivery optimization where a homeserver receives
   one copy of an event per destination homeserver rather than per
   follower, then fans it out locally.

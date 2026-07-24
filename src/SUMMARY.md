@@ -10,6 +10,7 @@
 - [Federation Model](./architecture/federation.md)
 - [Media Handling](./architecture/media.md)
 - [Feeds & Discovery](./architecture/feeds.md)
+- [Mini-Apps](./architecture/mini-apps.md)
 - [Security & Trust Model](./architecture/security.md)
 
 # Part II: Protocol Specification
@@ -27,6 +28,7 @@
 - [Feeds Subsystem](./protocol/feeds.md)
 - [Explore & Aggregators](./protocol/explore.md)
 - [Directory Registration](./protocol/directory.md)
+- [Mini-Apps](./protocol/mini-apps.md)
 - [Encryption Envelope](./protocol/encryption.md)
 
 # Appendices
